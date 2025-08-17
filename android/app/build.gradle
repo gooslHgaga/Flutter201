@@ -1,16 +1,15 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'com.google.gms.google-services' // إذا كنت تستخدم Firebase، يمكنك الاحتفاظ به
     id 'flutter'
 }
 
 android {
-    namespace "com.example.workflow"
+    namespace "com.example.workflow" // عدّل حسب التطبيق
     compileSdkVersion 33
 
     defaultConfig {
-        applicationId "com.example.workflow"
+        applicationId "com.example.workflow" // عدّل حسب التطبيق
         minSdkVersion 21
         targetSdkVersion 33
         versionCode 1
@@ -20,7 +19,7 @@ android {
 
     buildTypes {
         release {
-            signingConfig signingConfigs.debug // ضع توقيع release إذا أردت
+            signingConfig signingConfigs.debug // ضع توقيع release إذا لديك
             minifyEnabled false
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
