@@ -1,17 +1,18 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'flutter'
+    id 'dev.flutter.flutter-gradle'
 }
 
 android {
     namespace "com.example.workflow" // عدّل حسب التطبيق
-    compileSdkVersion 33
+    compileSdk = 33
+    ndkVersion = "25.1.8937393" // عدّل إذا كنت تستخدم NDK
 
     defaultConfig {
         applicationId "com.example.workflow" // عدّل حسب التطبيق
-        minSdkVersion 21
-        targetSdkVersion 33
+        minSdk = 21
+        targetSdk = 33
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -20,8 +21,8 @@ android {
     buildTypes {
         release {
             signingConfig signingConfigs.debug // ضع توقيع release إذا لديك
-            minifyEnabled false
-            shrinkResources false
+            isMinifyEnabled = false
+            shrinkResources = false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
